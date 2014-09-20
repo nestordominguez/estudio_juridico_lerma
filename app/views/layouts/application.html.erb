@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<div class="header">
+
+	<%= render 'layouts/header' %>
+</div>
+<p id="notice"><%= notice %></p>
+<h1> Estudio juridico antonela lerma seccion: <%= yield(:seccion)%></h1>
 <%= yield %>
 
 </body>

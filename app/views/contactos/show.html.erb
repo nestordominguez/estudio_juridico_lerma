@@ -1,0 +1,26 @@
+<%provide(:seccion, "clientes")%>
+<div class="table">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @contacto.name %>
+</p>
+
+<p>
+  <strong>Teléfono:</strong>
+  <%= @contacto.phone %>
+</p>
+
+<p>
+  <strong>E-mail:</strong>
+  <%= @contacto.email %>
+</p>
+
+<p>
+  <strong>Comentarios:</strong>
+  <%= @contacto.comentarios %>
+</p>
+
+<%= link_to 'Back', contactos_path %>
+</div>

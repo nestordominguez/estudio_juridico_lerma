@@ -1,0 +1,31 @@
+<%provide(:seccion, "clientes")%>
+<h1>Listing contactos</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Leido</th>
+      <th>Nombre</th>
+      <th>Telefono</th>
+      <th>E-mail</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contactos.each do |contacto| %>
+      <tr>
+        <td><%= contacto.leido %></td>
+        <td><%= contacto.name %></td>
+        <td><%= contacto.phone %></td>
+        <td><%= contacto.email %></td>
+        <td><%= link_to 'Show', contacto %></td>
+        <td><%= link_to 'Destroy', contacto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

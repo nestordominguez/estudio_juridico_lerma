@@ -1,4 +1,5 @@
 class StudioController < ApplicationController
+	
 	def estudio		
 	end
 
@@ -6,9 +7,6 @@ class StudioController < ApplicationController
 	end
 
 	def areas
-	end
-
-	def client
 	end
 
 	def publicaciones
