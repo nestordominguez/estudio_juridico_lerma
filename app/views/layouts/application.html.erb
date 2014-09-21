@@ -15,6 +15,8 @@
 <p id="notice"><%= notice %></p>
 <h1> Estudio juridico antonela lerma seccion: <%= yield(:seccion)%></h1>
 <%= yield %>
-
+<% if user_signed_in?%>
+	<%= link_to 'logout', destroy_user_session_path, :method => :delete %>
+<%end%>
 </body>
 </html>
