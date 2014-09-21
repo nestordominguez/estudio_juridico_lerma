@@ -1,5 +1,6 @@
 EstudioJuridicoLerma::Application.routes.draw do
 
+  devise_for :users
   resources :contactos
 
   get   '/studio/staff',          to: 'studio#staff',           as: 'staff'
