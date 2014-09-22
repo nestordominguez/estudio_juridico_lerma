@@ -1,0 +1,32 @@
+<%= tinymce_assets %>
+<%= form_for(@pagina) do |f| %>
+  <% if @pagina.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pagina.errors.count, "error") %> prohibited this pagina from being saved:</h2>
+
+      <ul>
+      <% @pagina.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :seccion %><br>
+    <% option = %w{Estudio Staff Area Publicacion Link}%>
+    <%= f.select :seccion, option %>
+  </div>
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_area :descripcion, class: "tinymce" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+    <%= tinymce %>
+  </div>
+<% end %>

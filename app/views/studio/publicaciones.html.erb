@@ -1,1 +1,10 @@
 <%provide(:seccion, "publicaciones")%>
+<%unless @show.nil?%>
+<p>
+  <%= @show.titulo.html_safe %>
+</p>
+
+<p>
+  <%= @show.descripcion.html_safe %>
+</p>
+<%end%>

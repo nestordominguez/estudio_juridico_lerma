@@ -1,5 +1,7 @@
 EstudioJuridicoLerma::Application.routes.draw do
 
+  resources :paginas
+
   devise_for :users
   resources :contactos
 
