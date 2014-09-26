@@ -6,9 +6,6 @@ body {
   line-height: 18px;
   
 }
-#notice{
-  text-align: center;
-}
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -18,6 +15,10 @@ p, ol, ul, td {
   width: 200px; 
   margin: 0 auto;
 }
+
+textarea {
+resize: none;
+}
 pre {
   background-color: #eee;
   padding: 10px;
@@ -25,13 +26,18 @@ pre {
 }
 
 a {
+  font-size: 14px;
   color: #000;
   &:visited {
-    color: #666;
+    color: #000;
   }
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #D4AE4D;
+    background-color: none;
+  }
+  &:link{
+    color: #D4AE4D;
+    text-decoration:none;   
   }
 }
 
@@ -42,7 +48,8 @@ div {
 }
 
 #notice {
-  color: red;
+  color: green;
+  text-align: center;
 }
 
 .field_with_errors {

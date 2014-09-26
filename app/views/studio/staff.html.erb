@@ -1,9 +1,8 @@
 <%provide(:seccion, "staff")%>
 <%unless @show.nil?%>
-<p>
+<h2>
   <%= @show.titulo.html_safe %>
-</p>
-
+</h2>
 <p>
   <%= @show.descripcion.html_safe %>
 </p>

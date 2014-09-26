@@ -1,0 +1,66 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* typographi */
+
+h1, h2{
+	text-align: center;
+}
+h1 {
+	font-size: 2.1em;
+}
+h2 {
+	font-size: 1.8em;
+}
+
+/* Navegation */
+
+.navbar{
+	background-color: #7B1C28;
+}
+/* head */
+.header{ 
+	text-align: right;
+	li{	
+		display: inline-block;
+	}
+}
+
+.navbar{
+	padding-top: 10px;
+	padding-right: 10px;
+}
+
+/* body */
+
+.container{
+	background-color: #E2DBC8;
+	box-shadow: -6px 6px 7px #999;
+	-webkit-box-shadow: -6px 6px 7px #999;
+  	-moz-box-shadow: -6px 6px 7px #999;
+	li{	
+		display: inline-block;
+	}
+}
+/* footer*/
+
+.footer{
+	text-align: right;
+	position: relative;
+	padding-right: 20px;
+	padding-bottom: 20px;
+    bottom: -3em;
+	li{	
+		display: inline-block;
+		text-shadow: -6px 6px 7px #999;
+		-webkit-text-shadow: -6px 6px 7px #999;
+  		-moz-text-shadow: -6px 6px 7px #999;
+	}
+}
+
+
+/* buttom */
+
+.btn-ttc:hover {
+  background-position: 0 -15px;
+}

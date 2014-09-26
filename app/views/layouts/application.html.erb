@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>EstudioJuridicoLerma</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<div class="header">
-
+<html lang="en">
+  <head>
+  	<title>Estudio Juridico Lerma</title>
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, 
+      initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- CSS de Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
 	<%= render 'layouts/header' %>
-</div>
-<p id="notice"><%= notice %></p>
-<h1> Estudio juridico antonela lerma seccion: <%= yield(:seccion)%></h1>
-<%= yield %>
-<% if user_signed_in?%>
-	<%= link_to 'logout', destroy_user_session_path, :method => :delete %>
-<%end%>
-</body>
+	<div class="container" id="contenido">
+		<h1> Estudio juridico Antonela Lerma sección: <%= yield(:seccion)%></h1>
+		<% unless notice.nil?%>
+		<p id="notice" class="alert alert-success"><%= notice %></p>
+	<%end%>
+		<%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
+  </body>
 </html>

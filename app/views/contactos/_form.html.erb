@@ -29,7 +29,11 @@
     <%= f.text_area :comentarios %>
   </div>
   <div class="actions">
-    <%= f.submit "Enviar  "%>
+    <%= f.submit "Enviar", :class => 'btn btn-primary btn-sm'%>
+    <%unless user_signed_in?%>
+      <li><%= link_to 'Iniciar Sesión', new_user_session_path%></li>
+    <%end%>
   </div>
+
 <% end %>
 </div>

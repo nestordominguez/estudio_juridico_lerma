@@ -14,7 +14,6 @@
 
   <div class="field">
     <%= f.label :seccion %><br>
-    <% option = %w{Estudio Staff Area Publicacion Link}%>
     <%= f.select :seccion, option %>
   </div>
   <div class="field">
@@ -26,7 +25,7 @@
     <%= f.text_area :descripcion, class: "tinymce" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear pagina", :class => 'btn btn-primary btn-sm' %>
     <%= tinymce %>
   </div>
 <% end %>

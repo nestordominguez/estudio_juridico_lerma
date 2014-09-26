@@ -1,5 +1,5 @@
 <%provide(:seccion, "clientes")%>
-<h1>Listing contactos</h1>
+<h1>Lista de mensajes</h1>
   
 <table class="table">
   <thead>
@@ -14,7 +14,7 @@
     </tr>
   </thead>
 
-  <tbody class="result">
+  <tbody class="result actions">
     <% @contactos.each do |contacto| %>
       <tr>
       
@@ -22,10 +22,9 @@
         <td><%= contacto.name %></td>
         <td><%= contacto.phone %></td>
         <td><%= contacto.email %></td>
-        <td><%= link_to 'Show', contacto %></td>
-        <td><%= link_to 'Destroy', contacto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      
-      </tr>
+        <td><%= link_to 'Mostar', contacto%></td>
+        <td><%= link_to 'Eliminar', contacto, method: :delete, data: { confirm: 'Estas seguro?' }%></td>
+        </tr>
     <% end %>
   </tbody>
 </table>

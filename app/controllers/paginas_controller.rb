@@ -26,9 +26,9 @@ class PaginasController < ApplicationController
   # POST /paginas.json
   def create
     @pagina = Pagina.new(pagina_params)
-
+    
     respond_to do |format|
-      if @pagina.save
+      if @pagina.save && check_seccion?
         format.html { redirect_to paginas_path, notice: 'Pagina was successfully created.' }
         format.json { render action: 'index', status: :created, location: paginas }
       else
@@ -42,7 +42,7 @@ class PaginasController < ApplicationController
   # PATCH/PUT /paginas/1.json
   def update
     respond_to do |format|
-      if @pagina.update(pagina_params)
+      if @pagina.update(pagina_params) && check_seccion?
         format.html { redirect_to @pagina, notice: 'Pagina was successfully updated.' }
         format.json { head :no_content }
       else
@@ -71,5 +71,8 @@ class PaginasController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pagina_params
       params.require(:pagina).permit(:seccion, :titulo, :descripcion)
+    end
+    def check_seccion?
+      @pagina.seccion != "Seleccione una sección"
     end
 end

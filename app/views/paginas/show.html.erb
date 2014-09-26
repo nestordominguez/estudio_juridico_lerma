@@ -1,19 +1,19 @@
 <%provide(:seccion, "Creacion de páginas")%>
 
 <p>
-  <strong>Seccion:</strong>
+  <strong>Sección:</strong>
   <%= @pagina.seccion %>
 </p>
 
 <p>
-  <strong>Titulo:</strong>
+  <strong>Título:</strong>
   <%= @pagina.titulo %>
 </p>
 
 <p>
-  <strong>Descripcion:</strong>
-  <%= @pagina.descripcion %>
+  <strong>Descripción:</strong>
+  <%= @pagina.descripcion.html_safe %>
 </p>
 
-<%= link_to 'Edit', edit_pagina_path(@pagina) %> |
-<%= link_to 'Back', paginas_path %>
+<%= link_to 'Editar', edit_pagina_path(@pagina) %> |
+<%= link_to 'Volver', paginas_path %>

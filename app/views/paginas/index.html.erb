@@ -1,11 +1,12 @@
 <%provide(:seccion, "Creacion de páginas")%>
-<h1>Listing paginas</h1>
+<h1>Lista de páginas</h1>
 
+<div class="container-fluid">
 <table>
   <thead>
     <tr>
-      <th>Seccion</th>
-      <th>Titulo</th>
+      <th>Sección</th>
+      <th>Título</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,9 +18,9 @@
       <tr>
         <td><%= pagina.seccion %></td>
         <td><%= pagina.titulo %></td>
-        <td><%= link_to 'Show', pagina %></td>
-        <td><%= link_to 'Edit', edit_pagina_path(pagina) %></td>
-        <td><%= link_to 'Destroy', pagina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', pagina%></td>
+        <td><%= link_to 'Editar', edit_pagina_path(pagina)%></td>
+        <td><%= link_to 'Eliminar', pagina, method: :delete, data: { confirm: 'Estas seguro?' }%></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +28,5 @@
 
 <br>
 
-<%= link_to 'New Pagina', new_pagina_path %>
+<%= link_to 'Nueva página', new_pagina_path, :class => 'btn btn-ttc' %>
+</div>
