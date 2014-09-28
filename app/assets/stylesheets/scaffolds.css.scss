@@ -28,6 +28,8 @@ pre {
 a {
   font-size: 14px;
   color: #000;
+  margin-bottom: 10px;
+
   &:visited {
     color: #000;
   }
@@ -79,4 +81,23 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+
+.btn-danger {
+  margin-bottom: 10px;
+    font-size: 14px;
+    color: #000;
+      &:visited {
+        color: #000;
+      }
+      &:hover {
+        color: #D4AE4D;
+        background-color: none;
+      }
+      &:link{
+        color: #D4AE4D;
+        text-decoration:none;   
+      }
+
 }

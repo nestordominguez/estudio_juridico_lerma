@@ -1,3 +1,4 @@
+<div class="table">
 <p>Hola <%= @resource.email %>!</p>
 
 <p>Su cuenta fue bloqueada por el exesivo numero de intentos de ingresos con datos incorrectos.</p>
@@ -5,3 +6,4 @@
 <p>Click en el link abajo para desbloquear su cuenta:</p>
 
 <p><%= link_to 'Desbloquear mi cuenta', unlock_url(@resource, unlock_token: @token) %></p>
+</div>

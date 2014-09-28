@@ -1,3 +1,4 @@
+<div class="table">
 <h2>Cambiar su contraseña</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
@@ -10,7 +11,8 @@
   <div><%= f.label :password_confirmation, "Confirmar mi nueva contraseña" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.submit "Cambiar contraseña", :class => 'btn btn-primary btn-sm' %></div>
+  <div><%= f.submit "Cambiar contraseña", :class => 'btn btn-sample btn-sm' %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

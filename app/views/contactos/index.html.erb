@@ -2,6 +2,7 @@
 <h1>Lista de mensajes</h1>
   
 <table class="table">
+<p><%= will_paginate @contactos, renderer: BootstrapPagination::Rails %></p>
   <thead>
     <tr>
       <th>Leido</th>
@@ -28,5 +29,7 @@
     <% end %>
   </tbody>
 </table>
-
+<p><%= will_paginate @contactos, renderer: BootstrapPagination::Rails %></p>
 <br>
+
+

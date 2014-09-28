@@ -12,6 +12,8 @@ gem 'sprockets', '2.11.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
