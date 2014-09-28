@@ -14,6 +14,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor'
+end
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
