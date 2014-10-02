@@ -34,6 +34,14 @@ h2 {
 /* body */
 
 .container{
+	position: absolute; /* podría ser relative */ 
+	width: 80%; 
+	height: 500px;
+	left: 10%;
+	
+	overflow-y:auto;overflow-x:hidden;
+	text-overflow: ellipsis;
+
 	background-image: url("images.jpg");
 	border-radius: 25px;
 	-moz-border-radius: 25px;
@@ -49,7 +57,9 @@ h2 {
 
 .footer{
 	text-align: right;
-	position: relative;
+	position: absolute;
+	top: 94%;
+	left: 60%;
 	padding-right: 20px;
 	padding-bottom: 20px;
     bottom: -3em;
@@ -69,8 +79,10 @@ h2 {
 }
 
 /*min*/
-
-.btn-sample { 
+.active {
+	color: #BF9575 !important; 
+}
+.btn-sample{ 
   color: #000; 
   background-color: #BF9575; 
   border-color: #D62F59; 
@@ -116,3 +128,4 @@ fieldset[disabled] .btn-sample.active {
   color: #BF9575; 
   background-color: #C1E8E3; 
 }
+

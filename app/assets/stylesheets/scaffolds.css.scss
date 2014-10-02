@@ -38,7 +38,7 @@ a {
     background-color: none;
   }
   &:link{
-    color: #D4AE4D;
+    color: #000;
     text-decoration:none;   
   }
 }
@@ -100,4 +100,7 @@ div {
         text-decoration:none;   
       }
 
+}
+.resaltar{
+  background-color: #554E1C !important;
 }
