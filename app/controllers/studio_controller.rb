@@ -22,6 +22,6 @@ class StudioController < ApplicationController
 	
 	private
     def set_pagina(option)
-    	@show = Pagina.all.select {|pagina| pagina.seccion == option}.last
+    	@show = Pagina.find_by_seccion(option)
     end
 end
