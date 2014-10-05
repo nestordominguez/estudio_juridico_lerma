@@ -17,7 +17,11 @@
 
   <tbody class="result actions">
     <% @contactos.each do |contacto| %>
-      <tr>
+        <%if contacto.leido == "No"%>
+          <tr class="resaltar">
+        <%else%>
+          <tr>
+        <%end%>
         <td><%= contacto.leido %></td>
         <td><%= contacto.name %></td>
         <td><%= contacto.phone %></td>
@@ -28,7 +32,7 @@
     <% end %>
   </tbody>
 </table>
-<p><%= will_paginate @contactos, renderer: BootstrapPagination::Rails %></p>
+<p><%= will_paginate @contactos, renderer: BootstrapPagination::Rails, bootstrap: 3 %></p>
 <br>
 
 

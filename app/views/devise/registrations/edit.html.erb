@@ -8,24 +8,24 @@
   <%= f.email_field :email, autofocus: true %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div>Actualmente se espera la confirmación para: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password, "Contraseña" %> <i>(leave blank if you don't want to change it)</i><br />
+  <div><%= f.label :password, "Contraseña" %> <i>(Dejelo en blanco si no busca cambiarlo)</i><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
   <div><%= f.label :password_confirmation, "Confirmar contraseña" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.label :current_password, "Contraseña actual" %> <i>(we need your current password to confirm your changes)</i><br />
+  <div><%= f.label :current_password, "Contraseña actual" %> <i>(necesitamos su contraseña actual para confirmar los cambios)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
 
   <div><%= f.submit "Actualizar", :class => 'btn btn-sample btn-sm' %></div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Cancelar mi cuenta</h3>
 
-<p>Desontento? <%= button_to "Cancelar cuenta", :class => 'btn btn-sample btn-sm', registration_path(resource_name), data: { confirm: "Esta seguro?" }, method: :delete %></p>
+<p>Desontento? <%= button_to "Cancelar cuenta", registration_path(resource_name), data: { confirm: "Esta seguro?" }, method: :delete, :class => 'btn btn-sample btn-sm' %></p>
 
 <%= link_to "Volver", :back %>
 </div>

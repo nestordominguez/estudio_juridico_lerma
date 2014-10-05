@@ -1,7 +1,7 @@
 # languaje: es
 Feature: Open page
 
-  Scenario: User open page
-    Given a user visits the home page
-    When they in coming home page
-    Then they should see page estudio
+  Scenario: User open home page
+    Given I open estudio page
+    When they is open
+    Then they should see a title and a description

@@ -2,8 +2,11 @@
 <%= form_for(@pagina) do |f| %>
   <% if @pagina.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@pagina.errors.count, "error") %> prohibited this pagina from being saved:</h2>
-
+    <% if @pagina.errors.count == 1 %>
+      <h2> 1 error prohibe que estos datos sean guardados:</h2>
+      <%else%>
+      <h2> <%= @pagina.errors.count %> errores prohiben que estos datos sean guardados:</h2>
+      <% end %>
       <ul>
       <% @pagina.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>

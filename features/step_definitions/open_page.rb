@@ -1,16 +1,15 @@
-Given(/^a user visits the home page$/) do
+
+Given(/^I open estudio page$/) do
 	visit root_path
 end
 
-When(/^they in home page$/) do
-  pagina = Pagina.all
-  
-  expect(page).to have_content("Estudio juridico Antonela Lerma sección: estudio")
+When(/^they is open$/) do
+  expect have_content
 end
-# Then /^I should see "(.*?)"$/ do |arg1|
-#   page.should have_content(arg1)
-# end
 
-Then(/^they should see page estudio$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^they should see a title and a description$/) do
+  Pagina.create(seccion: "Estudio", titulo: "Estudio", descripcion: "Hola")
+  @show = Pagina.find_by_seccion("Estudio")
+  expect have_content("Estudio Staff Areas Publicaciones Links Clientes Estudio juridico Antonela Lerma sección: estudio")
+  expect have_descripcion("Hola")
 end

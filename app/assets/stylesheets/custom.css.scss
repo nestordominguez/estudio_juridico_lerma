@@ -32,7 +32,10 @@ h2 {
 }
 
 /* body */
-
+body {
+	overflow-y:hidden;
+	overflow-x:hidden;
+}
 .container{
 	position: absolute; /* podría ser relative */ 
 	width: 80%; 
@@ -46,9 +49,11 @@ h2 {
 	border-radius: 25px;
 	-moz-border-radius: 25px;
 	-webkit-border-radius: 25px;
+	-o-border-radius: 25px;
 	box-shadow: -6px 6px 7px #999;
 	-webkit-box-shadow: -6px 6px 7px #999;
   	-moz-box-shadow: -6px 6px 7px #999;
+  	-o-box-shadow: -6px 6px 7px #999;
 	li{	
 		display: inline-block;
 	}
@@ -58,11 +63,9 @@ h2 {
 .footer{
 	text-align: right;
 	position: absolute;
-	top: 94%;
+	top: 92%;
 	left: 60%;
 	padding-right: 20px;
-	padding-bottom: 20px;
-    bottom: -3em;
 	li{	
 		display: inline-block;
 		text-shadow: -6px 6px 7px #999;
@@ -129,3 +132,59 @@ fieldset[disabled] .btn-sample.active {
   background-color: #C1E8E3; 
 }
 
+
+.footer {
+    width:400px; /*Le establecemos un ancho*/
+	margin:0 auto; /*Centramos automaticamente*/
+}
+ 
+.footer > li {
+	float:left;
+}
+            
+.footer li a {
+	color:#000;
+	text-decoration:none;
+	padding:2px 10px;
+	margin-right: 70px;
+	display:block;
+}
+            
+.footer li ul {
+	display:none;
+	position:absolute;
+	min-width:140px;
+	text-align: right;
+}
+            
+.footer li:hover > ul {
+	display:block;
+}
+            
+.footer li ul li {
+	
+}
+            
+.footer li ul li ul {
+	right:-160px;
+	top:-30px;
+
+}
+
+.fondo{
+	color: #000 !important;
+	border: 2px solid;
+	background-color: #718F9C;
+	opacity:0.78;
+	border-radius: 25px;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	position:relative;
+	top:-164px;
+	right: 40px;
+	margin-right: 10px;
+	padding-left: 10px;
+	li {
+		text-aling: right;
+	}
+}

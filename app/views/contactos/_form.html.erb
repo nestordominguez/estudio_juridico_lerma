@@ -2,8 +2,12 @@
 <%= form_for(@contacto) do |f| %>
   <% if @contacto.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@contacto.errors.count, "error") %> prohibited this contacto from being saved:</h2>
-
+    
+     <% if @contacto.errors.count == 1 %>
+      <h2> 1 error prohíbe que estos datos sean guardados:</h2>
+      <%else%>
+      <h2> <%= @contacto.errors.count %> errores prohíben que estos datos sean guardados:</h2>
+      <% end %>
       <ul>
       <% @contacto.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -13,11 +17,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %><br>
+    <%= f.label :name, "Nombre" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :teléfono %><br>
+    <%= f.label :phone, "Teléfono" %><br>
     <%= f.telephone_field :phone %>
   </div>
   <div class="field">

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-(1..100).each do |i|
+(1..50).each do |i|
 	Contacto.create(:name => "Cliente #{i}", :phone => "123456#{i}",
 	:email => "Cliente-#{i}@example.com", :comentarios => "Hola buenas tardes")
 end

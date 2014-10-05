@@ -17,20 +17,3 @@
 //= require turbolinks
 //= require tinymce
 //= require_tree .
-
-window.onload = initPage;
-function initPage() {
-	// find the thumbn on the page
-	links = document.getElementById("thumbnailPane").getElementsByTagName("img");
-	// set the handlerfor each image
-	for (var i=0; i<links.length;i++) {
-		image = links[i];
-		// create the oncick function
-		image.onclick = function() {
-			// find the full-size image name
-			detailURL = 'images/' + this.title + '-detail.jpg';
-			document.getElementById("itemDetail").src = detailURL;
-			getDetails(this.title);
-		}
-	}
-}
