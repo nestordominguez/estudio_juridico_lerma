@@ -35,6 +35,7 @@ h2 {
 body {
 	overflow-y:hidden;
 	overflow-x:hidden;
+	background-image: url("images7.jpg");
 }
 .container{
 	position: absolute; /* podría ser relative */ 
@@ -45,7 +46,7 @@ body {
 	overflow-y:auto;overflow-x:hidden;
 	text-overflow: ellipsis;
 
-	background-image: url("images.jpg");
+	background-image: url("images1.jpg");
 	border-radius: 25px;
 	-moz-border-radius: 25px;
 	-webkit-border-radius: 25px;
@@ -174,8 +175,8 @@ fieldset[disabled] .btn-sample.active {
 .fondo{
 	color: #000 !important;
 	border: 2px solid;
-	background-color: #718F9C;
-	opacity:0.78;
+	background-color: #DED5D5;
+	opacity:0.79;
 	border-radius: 25px;
 	-moz-border-radius: 25px;
 	-webkit-border-radius: 25px;
