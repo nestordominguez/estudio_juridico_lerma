@@ -1,23 +1,23 @@
 class StudioController < ApplicationController
 	skip_before_action :authenticate_user!
 	def estudio
-		set_pagina("Estudio")
+		set_pagina
 	end
 
 	def staff
-		set_pagina("Staff")
+		set_pagina
 	end
 
 	def areas
-		set_pagina("Area")
+		set_pagina
 	end
 
 	def publicaciones
-		set_pagina("Publicacion")
+		set_pagina
 	end
 
 	def links
-		set_pagina("Link")
+		set_pagina
 	end
 	
 	private
