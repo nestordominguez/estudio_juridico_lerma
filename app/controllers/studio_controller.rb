@@ -32,6 +32,10 @@ class StudioController < ApplicationController
     	option
     end
     def select_option
-    	options.select {|option| option == self.method().to_s.split("#").last.split(">")}
+    	options.select do 
+    		|option| StudioController.instance_methods(false).each do
+    			|method| method.to_s == option
+    		end
+    	end
     end
 end
