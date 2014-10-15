@@ -1,10 +1,10 @@
 <div class="header navbar" id="thumbnailPane">
   <td>
-    <li><p><%= link_to "Estudio", root_path%></p></li>
-    <li><p><%= link_to "Staff", staff_path%></p></li>
-    <li><p><%= link_to "Areas", areas_path%></p></li>
-    <li><p><%= link_to "Publicaciones", publicaciones_path%></p></li>
-    <li><p><%= link_to "Links", links_path%></p></li>
+    <li><p><%= link_to "Estudio", root_path(seccion: "Estudio")%></p></li>
+    <li><p><%= link_to "Staff", staff_path(seccion: "Staff")%></p></li>
+    <li><p><%= link_to "Areas", areas_path(seccion: "Area")%></p></li>
+    <li><p><%= link_to "Publicaciones", publicaciones_path(seccion: "Publicacion")%></p></li>
+    <li><p><%= link_to "Links", links_path(seccion: "Link")%></p></li>
     <li><p><%= link_to "Clientes", new_contacto_path%></p></li>
   </td>
 </div>

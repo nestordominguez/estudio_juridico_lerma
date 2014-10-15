@@ -23,19 +23,6 @@ class StudioController < ApplicationController
 	
 	private
     def set_pagina
-    	@show = Pagina.find_by_seccion(select_option)
-    end
-    def options
-    	pagina = Pagina.all
-    	option = []
-    	pagina.each {|pag| option << pag.seccion }
-    	option
-    end
-    def select_option
-    	options.select do 
-    		|option| StudioController.instance_methods(false).each do
-    			|method| method.to_s == option
-    		end
-    	end
+    	@show = Pagina.find_by_seccion(params[:seccion])
     end
 end
