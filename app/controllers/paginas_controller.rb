@@ -1,5 +1,6 @@
 class PaginasController < ApplicationController
   before_action :set_pagina, only: [:show, :edit, :update, :destroy]
+  before_action :check_abogado
 
   # GET /paginas
   # GET /paginas.json

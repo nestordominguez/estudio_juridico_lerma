@@ -1,16 +1,25 @@
 <div class="footer">
   <ul>
-  <% if user_signed_in?%>
-  <li><%= link_to 'Panel de control'%>
-  	<ul class="nav">
-    <div class="fondo">
-      <li><%= link_to 'Crear paginas', paginas_path %></li>
-      <li><%= link_to 'Ver mensajes', contactos_path %></li>
-      <li><%= link_to 'Editar cuenta', edit_user_registration_path %></li>
-	    <li><%= link_to 'Cerrar Sesión', destroy_user_session_path, :method => :delete %></li>
-    </div>
-	</ul>
-  </li>
+  <%if user_signed_in?%>
+    <% if current_user.abogado%>
+    <li><%= link_to 'Panel de control'%>
+    	<ul class="nav">
+      <div class="fondo">
+        <li><%= link_to 'Crear paginas', paginas_path %></li>
+        <li><%= link_to 'Ver mensajes', contactos_path %></li>
+        <li><%= link_to 'Editar cuenta', edit_user_registration_path %></li>
+  	    <li><%= link_to 'Cerrar Sesión', destroy_user_session_path, :method => :delete %></li>
+      </div>
+  	</ul>
+    </li>
+    <%elsif !current_user.abogado %>
+      <div >
+         <ul>
+            <%= link_to 'Editar cuenta', edit_user_registration_path %> |
+            <%= link_to 'Cerrar Sesión', destroy_user_session_path, :method => :delete %>
+         </ul>
+      </div>
+    <%end%>
   <%end%>
   </ul>
 </div>

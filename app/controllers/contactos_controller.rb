@@ -1,6 +1,7 @@
 class ContactosController < ApplicationController
   before_action :set_contacto, only: [:show, :destroy]
   skip_before_action :authenticate_user!, only: [:new, :create]
+  before_action :check_abogado, only: [ :index, :show, :destroy]
 
   # GET /contactos
   # GET /contactos.json
