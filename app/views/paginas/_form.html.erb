@@ -17,7 +17,7 @@
 
   <div class="field">
     <%= f.label :seccion %><br>
-    <%= f.select :seccion, option %>
+    <%= f.select :seccion, Pagina::OPTION, :prompt => "Seleccione una seccion" %>
   </div>
   <div class="field">
     <%= f.label :titulo %><br>
