@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  	<title><%= full_title(yield(:seccion))%></title>
-	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-	  <%= csrf_meta_tags %>
+    <title><%= full_title(yield(:seccion))%></title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, 
+    <meta name="viewport" content="width=device-width,
       initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- CSS de Bootstrap -->
-   
+
     <%= render 'layouts/shim' %>
   </head>
   <body>
-	<%= render 'layouts/header' %>
-	<div class="container" id="contenido">
-		<h1> Estudio juridico Antonela Lerma sección: <%= yield(:seccion)%></h1>
-		<% unless notice.nil?%>
-		<p id="notice" class="alert alert-success"><%= notice %></p>
-	<%end%>
-		<%= yield %>
+  <%= render 'layouts/header' %>
+  <div class="container" id="contenido">
+    <h1> Estudio juridico Antonela Lerma sección: <%= yield(:seccion)%></h1>
+    <% unless notice.nil?%>
+    <p id="notice" class="alert alert-success"><%= notice %></p>
+  <%end%>
+    <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
   </body>

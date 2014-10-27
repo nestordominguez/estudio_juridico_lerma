@@ -1,0 +1,31 @@
+<%provide(:seccion, "usuarios")%>
+<h1>Lista de usuarios</h1>
+
+<div class="container-fluid">
+<table>
+  <thead>
+    <tr>
+      <th>abogado - </th>
+      <th>- email</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admins.each do |admin| %>
+      <tr>
+        <td><%= admin.abogado %></td>
+        <td><%= admin.email %></td>
+        <td><%= link_to 'Mostrar', admin %></td>
+        <td><%= link_to 'Editar', edit_user_path(:id => admin)%></td>
+        <td><%= link_to 'Eliminar', admin, method: :delete, data: { confirm: 'Estas seguro?' }%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+</div>

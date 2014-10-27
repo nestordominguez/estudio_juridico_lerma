@@ -1,5 +1,5 @@
 <div class="table">
-<h2>Editar <%= resource_name.to_s.humanize %></h2>
+<h2>Editar Usuario</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -23,7 +23,7 @@
   <div><%= f.submit "Actualizar", :class => 'btn btn-sample btn-sm' %></div>
 <% end %>
 
-<h3>Cancelar mi cuenta</h3>
+<h3>Cancelar cuenta</h3>
 
 <p>Desontento? <%= button_to "Cancelar cuenta", registration_path(resource_name), data: { confirm: "Esta seguro?" }, method: :delete, :class => 'btn btn-sample btn-sm' %></p>
 

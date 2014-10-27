@@ -1,0 +1,13 @@
+<%provide(:seccion, "usuarios")%>
+<p>
+  <strong>Acceso:</strong>
+  <%= @admin.abogado %>
+</p>
+
+<p>
+  <strong>E-mail:</strong>
+  <%= @admin.email %>
+</p>
+
+<%= link_to 'Editar', edit_user_path(@admin), :class => 'btn btn-sample' %>
+<%= link_to 'Volver', users_path, :class => 'btn btn-sample' %>

@@ -7,7 +7,7 @@ class ContactosController < ApplicationController
   # GET /contactos.json
   def index
     @contactos = Contacto.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
-    #@contactos = Contacto.where(:leido).paginate(:page => params[:page]).order('created_at DESC')    
+    #@contactos = Contacto.where(:leido).paginate(:page => params[:page]).order('created_at DESC')
   end
 
   # GET /contactos/1

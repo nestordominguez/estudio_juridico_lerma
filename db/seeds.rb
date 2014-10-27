@@ -10,3 +10,7 @@
 	Contacto.create(:name => "Cliente #{i}", :phone => "123456#{i}",
 	:email => "Cliente-#{i}@example.com", :comentarios => "Hola buenas tardes")
 end
+(1..10).each do |i|
+    User.create(:email => "user_#{i}@example.com", :password => "magoloco",
+            :password_confirmation => "magoloco")
+end

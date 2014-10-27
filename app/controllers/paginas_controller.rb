@@ -24,10 +24,10 @@ class PaginasController < ApplicationController
 
   # POST /paginas
   # POST /paginas.json
-  def create 
+  def create
     @pagina = Pagina.new(pagina_params)
     respond_to do |format|
-      if @pagina.save 
+      if @pagina.save
         format.html { redirect_to paginas_path, notice: 'La págiana fue creada correctamente.' }
         format.json { render action: 'index', status: :created, location: paginas }
       else

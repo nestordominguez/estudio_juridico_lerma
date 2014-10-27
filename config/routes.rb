@@ -1,7 +1,13 @@
 EstudioJuridicoLerma::Application.routes.draw do
 
-  devise_for :users
+  get "admins",                 to: 'create_lawyer#index',    as: 'users'
+  get "admins/:id",             to: 'create_lawyer#show',     as: 'user'
+  get "admins/:id/edit",        to: 'create_lawyer#edit',     as: 'edit_user'
+  put "admins/:id",             to: 'create_lawyer#update',   as: ''
+  match 'admins/:id',           to: 'create_lawyer#update',   via: [:patch]
+  delete "admins/:id",          to: 'create_lawyer#destroy',  as: ''
 
+  devise_for :users
   resources :contactos
   resources :paginas
 
@@ -9,6 +15,6 @@ EstudioJuridicoLerma::Application.routes.draw do
   get   '/studio/areas',          to: 'studio#areas',           as: 'areas'
   get   '/studio/publicaciones',  to: 'studio#publicaciones',   as: 'publicaciones'
   get   '/studio/links',          to: 'studio#links',           as: 'links'
-  
+
   root 'studio#estudio'
 end
