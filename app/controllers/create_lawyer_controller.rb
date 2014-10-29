@@ -13,32 +13,30 @@ class CreateLawyerController < ApplicationController
 
   def update
     respond_to do |format|
-      if @admin.update(lawyer_params)
-        format.html { redirect_to @admin, notice: 'El usuario se actualizo
-          correctamente.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @admin.errors,
-          status: :unprocessable_entity }
+      unless @admin.superuser
+        if @admin.update(lawyer_params)
+          format.html { redirect_to @admin, notice: "El usuario #{@admin.email}
+            se actualizo correctamente"}
+          format.json { head :no_content }
+        else
+          format.html { redirect_to edit_user_path}
+        end
       end
+      format.html { redirect_to edit_user_path, notice: "Al usuario #{@admin.email}
+       no se le puede quitar el atributo abogado"}
+      messages
     end
   end
 
   def destroy
-
-    begin
     @admin.destroy
-    flash[:notice] = "Usuario #{@admin.email} eliminado"
-    rescue Exception => e
-    flash[:notice] = e.message
-    end
-
+    messages
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
   end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin
@@ -49,6 +47,12 @@ class CreateLawyerController < ApplicationController
     # only allow the white list through.
     def lawyer_params
       params.require(:user).permit(:abogado)
+    end
+
+    def messages
+      @admin.errors.full_messages.each do |msg|
+        flash[:notice] = msg
+      end
     end
 
 end

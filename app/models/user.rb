@@ -3,18 +3,34 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  after_create :set_abogado
+  before_create :first_user_make_abogado
   before_destroy :ensure_an_superuser
-
+  before_create :not_create_superuser
 
   private
-  def set_abogado
-    user ||= User.first.update_attributes(:abogado => true, :superuser => true)
-    return true
+  def first_user_make_abogado
+    self.abogado = true and self.superuser = true and return true unless User.any?
   end
 
   def ensure_an_superuser
-    raise 'No puede borrar este usuario' if self.superuser == true && self.id == 1
-    return true
+    messages("is superuser") and return false if superuser
+    messages("not superuser")
+  end
+
+  def not_create_superuser
+    if superuser
+      unless first_user_make_abogado
+        return false
+      end
+    end
+  end
+
+  def messages(message)
+    msg = if message == "is superuser"
+      "No puede borrar el usuario #{email}"
+    else
+      "El usuario #{email} se borro correctamente"
+    end
+    errors.add(:base, msg)
   end
 end

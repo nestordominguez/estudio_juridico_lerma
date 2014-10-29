@@ -18,8 +18,8 @@
   <div class="container" id="contenido">
     <h1> Estudio juridico Antonela Lerma sección: <%= yield(:seccion)%></h1>
     <% unless notice.nil?%>
-    <p id="notice" class="alert alert-success"><%= notice %></p>
-  <%end%>
+      <p id="notice" class="alert alert-success"><%= notice %></p>
+    <%end%>
     <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
