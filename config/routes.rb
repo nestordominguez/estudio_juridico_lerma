@@ -15,6 +15,7 @@ EstudioJuridicoLerma::Application.routes.draw do
   get   '/studio/areas',          to: 'studio#areas',           as: 'areas'
   get   '/studio/publicaciones',  to: 'studio#publicaciones',   as: 'publicaciones'
   get   '/studio/links',          to: 'studio#links',           as: 'links'
+  get   '/studio/estudio',        to: 'studio#estudio',         as: 'estudio'
 
   root 'studio#estudio'
 end
