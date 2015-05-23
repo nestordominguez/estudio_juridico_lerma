@@ -8,11 +8,11 @@
 }
 
 .menu:before {
-  content: "[";
+  content: "";
 }
 
 .menu:after {
-  content: "]";
+  content: "";
 }
 
 .menu > li {
@@ -20,7 +20,7 @@
 }
 
 .menu > li:before {
-  content: "|";
+  content: "";
   padding-right: 0.3em;
 }
 
@@ -28,6 +28,7 @@
   content: "";
   padding: 0;
 }
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -47,6 +48,8 @@ h2 {
 
 .navbar{
   background-color: #A20A0A;
+  padding-top: 10px;
+  padding-right: 10px;
 }
 /* head */
 .header{
@@ -56,11 +59,6 @@ h2 {
   }
 }
 
-.navbar{
-  padding-top: 10px;
-  padding-right: 10px;
-}
-
 /* body */
 body {
   overflow-y:hidden;
@@ -68,7 +66,7 @@ body {
   background-image: url("images7.jpg");
 }
 .container{
-  position: absolute; /* podría ser relative */
+  position: relative; /* podría ser relative */
   width: 80%;
   height: 500px;
   left: 10%;
@@ -89,21 +87,7 @@ body {
     display: inline-block;
   }
 }
-/* footer*/
 
-.footer{
-  text-align: right;
-  position: absolute;
-  top: 92%;
-  left: 60%;
-  padding-right: 20px;
-  li{
-    display: inline-block;
-    text-shadow: -6px 6px 7px #999;
-    -webkit-text-shadow: -6px 6px 7px #999;
-      -moz-text-shadow: -6px 6px 7px #999;
-  }
-}
 
 
 /* buttom */
@@ -163,17 +147,29 @@ fieldset[disabled] .btn-sample.active {
   background-color: #C1E8E3;
 }
 
+/* left */
 
-.footer {
-    width:400px; /*Le establecemos un ancho*/
+.left {
+  width:400px; /*Le establecemos un ancho*/
   margin:0 auto; /*Centramos automaticamente*/
+  text-align: right;
+  position: absolute;
+  top: 92%;
+  left: 60%;
+  padding-right: 20px;
+  li{
+    display: inline-block;
+    text-shadow: -6px 6px 7px #999;
+    -webkit-text-shadow: -6px 6px 7px #999;
+      -moz-text-shadow: -6px 6px 7px #999;
+  }
 }
 
-.footer > li {
+.left > li {
   float:left;
 }
 
-.footer li a {
+.left li a {
   color:#000;
   text-decoration:none;
   padding:2px 10px;
@@ -181,22 +177,22 @@ fieldset[disabled] .btn-sample.active {
   display:block;
 }
 
-.footer li ul {
+.left li ul {
   display:none;
   position:absolute;
   min-width:140px;
   text-align: right;
 }
 
-.footer li:hover > ul {
+.left li:hover > ul {
   display:block;
 }
 
-.footer li ul li {
+.left li ul li {
 
 }
 
-.footer li ul li ul {
+.left li ul li ul {
   right:-160px;
   top:-30px;
 
@@ -219,6 +215,7 @@ fieldset[disabled] .btn-sample.active {
     text-aling: right;
   }
 }
+
 
 body {
   background-color: #fff;
@@ -248,6 +245,7 @@ pre {
 }
 
 a {
+  text-decoration: none;
   font-size: 14px;
   color: #000;
   margin-bottom: 10px;
@@ -305,6 +303,10 @@ div {
   }
 }
 
+form {
+  margin-top: 60px;
+  margin-left: 400px;
+}
 
 .btn-danger {
   margin-bottom: 10px;

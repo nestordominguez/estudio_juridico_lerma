@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20141027014302) do
     t.string   "name"
     t.integer  "phone"
     t.string   "email"
-    t.text     "comentarios"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "leido",       default: "No"
+    t.string   "leido",      default: "No"
   end
 
   create_table "paginas", force: true do |t|

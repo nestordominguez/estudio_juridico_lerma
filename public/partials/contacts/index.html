@@ -1,0 +1,16 @@
+<h1>Lista de mensajes</h1>
+<table>
+  <tr>
+    <th>Nombre </th>
+    <th>Email </th>
+    <th>Teléfono </th>
+  </tr>
+  <tr ng-repeat="contact in contacts">
+    <td>{{contact.name}}</td>
+    <td>{{contact.email}}</td>
+    <td>{{contact.phone}}</td>
+    <td><a href="#/clients/show/{{contact.id}}">Mostrar</a></td>
+    <td><a href="#/clients/index" ng-click="delete(contact)">Delete</a></td>
+  </tr>
+</table>
+<a href="#/clients">Nuevo comentario</a>

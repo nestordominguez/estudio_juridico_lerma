@@ -1,26 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" ng-app="myApp">
-  <head>
-    <title></title>
-    <link rel="stylesheet" href="angular/app/css/app.css"/>
-    <script src="angular/app/lib/angular/angular.js"></script>
-    <script src="angular/app/lib/angular/angular-route.js"></script>
-    <script src="angular/app/lib/angular/jquery-1.11.2.js"></script>
-    <script src="angular/app/js/app.js"></script>
-    <script src="angular/app/js/services.js"></script>
-    <script src="angular/app/js/controllers.js"></script>
-    <script src="angular/app/js/filters.js"></script>
-    <script src="angular/app/js/directives.js"></script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,
-      initial-scale=1, maximum-scale=1, user-scalable=no">
-    <!-- CSS de Bootstrap -->
-
-  </head>
-  <body>
-
-  <div ng-view></div>
-
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="angular/app/css/app.css"/>
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="angular/app/lib/angular/angular.js"></script>
+  <script src="angular/app/lib/angular/autofocus.min.js"></script>
+  <script src="angular/app/lib/angular/angular-route.js"></script>
+  <script src="angular/app/lib/angular/angular-resource.js"></script>
+  <script src="angular/app/js/app.js"></script>
+  <script src="angular/app/js/services.js"></script>
+  <script src="angular/app/js/controllers.js"></script>
+  <script src="angular/app/js/filters.js"></script>
+  <script src="angular/app/js/directives.js"></script>
+</head>
+<body>
+    <ul class="header menu navbar" ng-controller="HeadController">
+      <div >
+        <li>
+          <span>
+            <a ng-repeat="session in sessions" ng-href='#/{{session.key}}'>{{session.value}}
+            </a>
+          </span>
+        </li>
+      </div>
+    </ul>
+  <div class="container"><div ng-view></div></div>
+</body>
 </html>

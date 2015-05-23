@@ -19,5 +19,10 @@ before_action :set_pagina
 private
 	def set_pagina
 		@show = Pagina.find_by_seccion(params[:seccion])
+    paramst = params[:seccion]
+    paramst.to_json
+
+      render paramst
+
 	end
 end

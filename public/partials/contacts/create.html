@@ -1,0 +1,40 @@
+
+<div>
+<h2>Formulario de AngularJS!</h2>
+<!-- -->
+  <div>
+    <form name='exampleForm'>
+      <div class='form-group'>
+        <label for="name">Nombre</label><br/>
+        <input type="text" class='form-control' placeholder='nombre' autofocus
+          name='name' data-ng-model='formData.name' required ng-minlength="3" >
+      </div>
+      <div class='form-group'>
+        <label for="email">Email</label><br/>
+        <input type="email" class='form-control' placeholder='ejemplo@email.com' name='email' data-ng-model='formData.email' required ng-pattern="/((([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})/i">
+      </div>
+      <div class='form-group'>
+        <label for="phone">Teléfono</label><br/>
+        <input type="phone" class='form-control' placeholder='Ej: 381-4211283' ng-pattern="/\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})/"
+          name='phone' data-ng-model='formData.phone' required>
+      </div>
+      <div class='form-group'>
+        <label for="comment">Comentario</label><br/>
+        <textarea type="comment" class='form-control' placeholder='Su consulta'  name='comment' data-ng-model='formData.comment' required></textarea>
+      </div>
+      <input type="submit" class='btn btn-success pull-right'
+        data-ng-click='createNewComment(formData)' data-ng-disabled='exampleForm.$invalid'>
+      <div data-ng-if="!exampleForm.$pristine">
+        <div class="alert alert-danger" ng-show="exampleForm.$invalid">
+          <div ng-repeat="(errorType, components) in exampleForm.$error">
+            <h4>{{errorType}}</h4>
+            <ul>
+              <li ng-repeat="(key,value) in components">El campo {{value.$name}} tiene un valor invalido: {{value.$viewValue || '[Esta vacío]'}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </form>
+    <br>
+  </div>
+</div>
