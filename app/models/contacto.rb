@@ -12,7 +12,7 @@ class Contacto < ActiveRecord::Base
   validates :email, :format => { with: VALID_EMAIL_REGEX,
     :message => "Formato no válido"}
   validates :phone, :length => {
-    in: 7..12, :message => "No es un número válido"},
+    in: 10..12, :message => "No es un número válido"},
     :format => { with: VALID_PHONE_REGEX,
       :message => "Número inválido"}
   validates :comment, :length => {
